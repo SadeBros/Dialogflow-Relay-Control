@@ -1,6 +1,7 @@
-/* Firebase Admin SDK Configuration */
 var admin = require("firebase-admin");
-var fs = require('fs');
+
+// filestream library for writing file
+var fs = require('fs'); 
 
 const ACTIVATE = "activate";
 const DEACTIVATE = "deactivate";
@@ -22,13 +23,7 @@ admin.initializeApp({
 var defaultDatabase = admin.database();
 var ref = defaultDatabase.ref();
 
-// You can retrieve services via the defaultApp variable...
-var defaultDatabase = admin.database();
-var ref = defaultDatabase.ref();
-
 entitiesFromAssistant = {}
-
-var ref = defaultDatabase.ref();
 
 ref.on('value', function (snapshot) {
 	snapshot.forEach(function (childSnapshot) {
